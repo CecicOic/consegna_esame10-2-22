@@ -236,9 +236,12 @@ def compute_avg_monthly_difference(time_series, first_year, last_year):
 
             # Caclulating difference:
             sum += month_list[i + 1] - month_list[i]
+        
+        # if there are more than two variations...
+        if len(month_list) >= 2:
 
-        # Calculating average:
-        avg = sum/(int(last_year) - int(first_year)) # avg = sum / n° of years - 1 
+            # ...Calculate the average:
+            avg = sum/(len(month_list) - 1) # avg = sum / n° of values for that month - 1 
 
         # Adding the average to the output list:
         final_list.append(avg)
@@ -255,4 +258,4 @@ def compute_avg_monthly_difference(time_series, first_year, last_year):
 
 time_series_file = CSVTimeSeriesFile(name='data.csv')
 time_series = time_series_file.get_data()
-print(compute_avg_monthly_difference(time_series, '1949', '1951'))
+print(compute_avg_monthly_difference(time_series, '1949', '1953'))
