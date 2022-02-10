@@ -256,6 +256,6 @@ def compute_avg_monthly_difference(time_series, first_year, last_year):
 #  MAIN  #
 # ====== #
 
-time_series_file = CSVTimeSeriesFile(name='data.csv')
-time_series = time_series_file.get_data()
-print(compute_avg_monthly_difference(time_series, '1949', '1953'))
+# time_series_file = CSVTimeSeriesFile(name='data.csv')
+# time_series = time_series_file.get_data()
+# print(compute_avg_monthly_difference(time_series, '1949', '1953'))
